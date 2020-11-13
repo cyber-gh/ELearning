@@ -16,4 +16,10 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="profile">Profile</string>
+    <string name="top_categories">Top Categories</string>
+    <string name="not_empty_required">Must not be empty</string>
+    <string name="min_length">Minimum length</string>
+    <string name="not_valid_email">Not valid email</string>
+    <string name="dont_match_field">Fields don\'t match</string>
+    <string name="my_courses">My Courses</string>
 </resources>

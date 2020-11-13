@@ -1,4 +1,4 @@
-package dev.skyit.elearning.student.notifications
+package dev.skyit.elearning.student.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

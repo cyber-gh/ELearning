@@ -1,4 +1,4 @@
-package dev.skyit.elearning.student.profile
+package dev.skyit.elearning.student.ui.profile
 
 import androidx.fragment.app.Fragment
 import dev.skyit.elearning.R

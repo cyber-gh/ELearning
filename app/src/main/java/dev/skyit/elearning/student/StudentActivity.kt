@@ -1,4 +1,4 @@
-package dev.skyit.elearning
+package dev.skyit.elearning.student
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import dev.skyit.elearning.R
 
 class StudentActivity : AppCompatActivity() {
 
@@ -19,7 +20,11 @@ class StudentActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.navigation_home, R.id.navigation_explore, R.id.navigation_notifications, R.id.navigation_profile))
+            R.id.navigation_home,
+            R.id.navigation_explore,
+            R.id.navigation_notifications,
+            R.id.navigation_profile
+        ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
