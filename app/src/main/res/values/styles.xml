@@ -2,4 +2,9 @@
 <resources>
 
     <style name="DefaultStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+    <style name="default_text">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/main_text_color</item>
+    </style>
 </resources>
