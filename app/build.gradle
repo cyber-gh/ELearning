@@ -55,7 +55,7 @@ dependencies {
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
-    def nav_version = "2.3.0-beta01"
+    def nav_version = "2.3.1"
     //Navigation
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
@@ -107,7 +107,7 @@ dependencies {
     // maetrial dialogs
     implementation 'com.afollestad.material-dialogs:core:3.3.0'
     implementation 'com.afollestad.material-dialogs:input:3.3.0'
-    implementation 'com.google.firebase:firebase-auth:20.0.0'
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
     implementation 'com.google.firebase:firebase-analytics:18.0.0'
 
     def work_version = "2.3.4"
@@ -169,4 +169,6 @@ dependencies {
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
 //    kaptAndroidTest "androidx.hilt:hilt-compiler:$hilt_version"
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.12.1'
 }
