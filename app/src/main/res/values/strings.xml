@@ -10,7 +10,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="select_account_text">Select user type</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -22,4 +22,6 @@
     <string name="not_valid_email">Not valid email</string>
     <string name="dont_match_field">Fields don\'t match</string>
     <string name="my_courses">My Courses</string>
+    <string name="teacher">Teacher</string>
+    <string name="student">Student</string>
 </resources>
