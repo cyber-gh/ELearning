@@ -1,4 +1,4 @@
-package dev.skyit.elearning.ui.home
+package dev.skyit.elearning.student.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

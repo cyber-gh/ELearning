@@ -7,19 +7,24 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="dev.skyit.elearning.ui.home.HomeFragment"
+        android:name="dev.skyit.elearning.student.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="dev.skyit.elearning.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_explore"
+        android:name="dev.skyit.elearning.student.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="dev.skyit.elearning.ui.notifications.NotificationsFragment"
+        android:name="dev.skyit.elearning.student.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="dev.skyit.elearning.student.profile.StudentProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile"/>
 </navigation>

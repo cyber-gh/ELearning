@@ -171,4 +171,7 @@ dependencies {
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
 
     implementation 'com.google.android.exoplayer:exoplayer:2.12.1'
+
+
+    implementation 'com.kirich1409.viewbindingpropertydelegate:viewbindingpropertydelegate:1.0.0'
 }
