@@ -1,0 +1,70 @@
+openapi: 3.0.1
+info:
+  title: awesome.
+  description: Documentation of our awesome API.
+  version: 1.0.0
+servers:
+- url: http://192.168.1.156:9999/
+paths:
+  /foobar:
+    post:
+      tags:
+      - foobar-tag
+      summary: Foobar does some amazing stuff.
+      operationId: idOfFoobarEndpoint
+      requestBody:
+        description: This text will appear as description of your request body.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FooBarRequest'
+        required: false
+      responses:
+        "200":
+          description: This text will appear as description of your response body.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FooBarResponse'
+      x-codegen-request-body-name: Body
+components:
+  schemas:
+    FooBarRequest:
+      title: FooBarRequest represents body of FooBar request.
+      type: object
+      properties:
+        bar:
+          type: array
+          items:
+            type: integer
+            format: int64
+          x-go-name: Bar
+        foo:
+          type: string
+          x-go-name: Foo
+      x-go-package: github.com/pdrum/swagger-automation/api
+    FooBarResponse:
+      title: FooBarResponse represents body of FooBar response.
+      type: object
+      properties:
+        baz:
+          $ref: '#/components/schemas/FooBarResponse_baz'
+      x-go-package: github.com/pdrum/swagger-automation/api
+    FooBarResponse_baz:
+      type: object
+      properties:
+        prop:
+          type: string
+          x-go-name: Prop
+  responses:
+    foobarResponse:
+      description: This text will appear as description of your response body.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FooBarResponse'
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+x-original-swagger-version: "2.0"
