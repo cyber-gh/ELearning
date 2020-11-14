@@ -9,12 +9,15 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import dev.skyit.elearning.R
+import dev.skyit.elearning.student.repo.TelemtryClient
 
 class StudentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        TelemtryClient().log()
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 

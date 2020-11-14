@@ -34,6 +34,10 @@ class CourseLessonsFragment(
                 LessonListItemViewBinding.inflate(it)
             }, injectData = {data ->
                 this.lessonName.text = data.name
+            }, onItemClick = {
+                LessonDetailsDialog.show(childFragmentManager, it.materials) {
+
+                }
             }
         )
 

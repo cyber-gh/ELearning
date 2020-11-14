@@ -33,6 +33,7 @@ import dev.skyit.elearning.student.StudentActivity
 import dev.skyit.elearning.student.ui.generic.BaseFragment
 import dev.skyit.elearning.utility.errAlert
 import dev.skyit.elearning.utility.snack
+import dev.skyit.elearning.utility.toastl
 import kotlinx.coroutines.*
 
 class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
@@ -110,17 +111,20 @@ class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
 
     private fun configurePlayer() {
 
-        GlobalScope.launch(Dispatchers.IO) {
+        val handler = CoroutineExceptionHandler { _, exception ->
+//            toastl("Please refresh the page")
+        }
+        GlobalScope.launch(Dispatchers.IO + handler) {
             val extractor = YoutubeJExtractor()
             val data = kotlin.runCatching {
-                extractor.extract("3l9jlulT4cQ")
-            }.getOrNull() ?: return@launch errAlert(getString(R.string.error_load_video))
+                extractor.extract("A8i4LHFyIlQ")
+            }.getOrNull() ?: return@launch //errAlert(getString(R.string.error_load_video))
             withContext(Dispatchers.Main) {
 
                 val srtFile = "http://192.168.1.130:3000/srt_file"
                 val videoUri = Uri.parse(data!!.streamingData.muxedStreams.last().url)
                 val subtitleUri = Uri.parse(srtFile)
-                val player = SimpleExoPlayer.Builder(requireContext()).build()
+                val player = kotlin.runCatching {   SimpleExoPlayer.Builder(requireContext()).build() }.getOrNull() ?: return@withContext
                 binding.playerView.player = player
                 playWithCaption(player, videoUri, subtitleUri)
 

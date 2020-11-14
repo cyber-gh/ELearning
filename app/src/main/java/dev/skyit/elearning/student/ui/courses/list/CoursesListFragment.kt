@@ -55,7 +55,9 @@ class CoursesListFragment : BaseFragment(R.layout.fragment_courses_list) {
             this.ratingView.setOnClickListener(null)
 
         }, onItemClick = {
-            findNavController().navigate(R.id.action_navigation_home_to_courseDetailsFragment)
+            findNavController().navigate(
+                    CoursesListFragmentDirections.actionCoursesListFragmentToCourseDetailsFragment(it.course.id!!)
+            )
         }
         )
         binding.recyclerView3.adapter = adapter

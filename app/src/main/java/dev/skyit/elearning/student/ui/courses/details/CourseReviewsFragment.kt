@@ -21,7 +21,7 @@ import kotlin.collections.ArrayList
 
 
 class CourseReviewsFragment(
-        private val courseId: String
+        private val courseId: String = ""
 ): BaseFragment(R.layout.fragment_course_reviews) {
     private val binding: FragmentCourseReviewsBinding by viewBinding()
     private val vModel: CourseReviewsViewModel by viewModel{
