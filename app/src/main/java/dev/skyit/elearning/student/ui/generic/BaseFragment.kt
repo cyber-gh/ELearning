@@ -1,6 +1,5 @@
 package dev.skyit.elearning.student.ui.generic
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
@@ -10,7 +9,6 @@ import thinkit.redesign.ui.generic.loading.Loadable
 open class BaseFragment(@LayoutRes layoutId: Int) : Fragment(layoutId), Loadable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         enterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.fade)
     }
 
@@ -20,7 +18,6 @@ open class BaseFragment(@LayoutRes layoutId: Int) : Fragment(layoutId), Loadable
     }
 
     override fun hideLoading() {
-
         val parent = activity as? Loadable ?: return
         parent.hideLoading()
     }
