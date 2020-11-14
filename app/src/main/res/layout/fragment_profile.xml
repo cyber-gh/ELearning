@@ -45,7 +45,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:text="RR"
                         app:textFont="@font/montserrat_bold"
-                        app:textSize="20sp" />
+                        app:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/accEmail"
@@ -56,6 +56,8 @@
                         android:text="Darii Dan"
                         android:textSize="24sp"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.29"
                         app:layout_constraintStart_toEndOf="@+id/initialsCircleImageView"
                         app:layout_constraintTop_toTopOf="parent" />
 
