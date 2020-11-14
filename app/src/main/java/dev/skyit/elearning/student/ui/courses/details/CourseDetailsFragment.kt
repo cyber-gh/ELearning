@@ -27,9 +27,6 @@ import dev.skyit.elearning.R
 import dev.skyit.elearning.databinding.FragmentCourseDetailsBinding
 import dev.skyit.elearning.student.StudentActivity
 import dev.skyit.elearning.student.ui.generic.BaseFragment
-import dev.skyit.elearning.utility.errAlert
-import dev.skyit.elearning.utility.snack
-import dev.skyit.elearning.utility.toastl
 import kotlinx.coroutines.*
 
 class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
@@ -177,7 +174,7 @@ class CourseDetailsPagerAdapter(fm: FragmentManager, private val courseId: Strin
             0 -> "Info"
             1 -> "Reviews"
             2 -> "Lessons"
-            else -> throw IllegalArgumentException("esti pula proasta")
+            else -> throw IllegalArgumentException("Exception")
         }
     }
 }

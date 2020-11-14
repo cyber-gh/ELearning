@@ -89,6 +89,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
         android:layout_marginEnd="16dp"
+        android:src="@drawable/skip"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

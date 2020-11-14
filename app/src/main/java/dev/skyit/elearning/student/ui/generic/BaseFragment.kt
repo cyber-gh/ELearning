@@ -9,7 +9,6 @@ import thinkit.redesign.ui.generic.loading.Loadable
 open class BaseFragment(@LayoutRes layoutId: Int) : Fragment(layoutId), Loadable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         enterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.fade)
     }
 
@@ -19,7 +18,6 @@ open class BaseFragment(@LayoutRes layoutId: Int) : Fragment(layoutId), Loadable
     }
 
     override fun hideLoading() {
-
         val parent = activity as? Loadable ?: return
         parent.hideLoading()
     }
