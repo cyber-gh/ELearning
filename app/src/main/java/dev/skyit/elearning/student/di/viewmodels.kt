@@ -1,7 +1,6 @@
 package dev.skyit.elearning.student.di
 
 import dev.skyit.elearning.auth.login.LoginViewModel
-import dev.skyit.elearning.student.repo.CourseReviewModel
 import dev.skyit.elearning.student.ui.courses.SearchCoursesMinimalViewModel
 import dev.skyit.elearning.student.ui.courses.details.CourseLessonsViewModel
 import dev.skyit.elearning.student.ui.courses.details.CourseReviewsViewModel
