@@ -14,10 +14,15 @@ import dev.skyit.elearning.utility.SimpleRecyclerAdapter
 import dev.skyit.elearning.utility.setItemSpacing
 import org.koin.androidx.viewmodel.compat.ScopeCompat.viewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
-class CourseLessonsFragment: BaseFragment(R.layout.fragment_course_lesson_list) {
+class CourseLessonsFragment(
+        private val courseId: String = ""
+): BaseFragment(R.layout.fragment_course_lesson_list) {
     private val binding: FragmentCourseLessonListBinding by viewBinding()
-    private val vModel: CourseLessonsViewModel by viewModel()
+    private val vModel: CourseLessonsViewModel by viewModel {
+        parametersOf(courseId)
+    }
 
     private lateinit var adapter: SimpleRecyclerAdapter<LessonModel, LessonListItemViewBinding>
 
@@ -39,6 +44,12 @@ class CourseLessonsFragment: BaseFragment(R.layout.fragment_course_lesson_list) 
         vModel.lessons.observe(viewLifecycleOwner, Observer {
             adapter.updateData(ArrayList(it))
         })
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         vModel.loadData()
     }

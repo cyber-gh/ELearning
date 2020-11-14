@@ -6,6 +6,7 @@ import dev.skyit.elearning.student.repo.CourseReviewModel
 import dev.skyit.elearning.student.ui.generic.BaseViewModel
 
 class CourseReviewsViewModel(
+    private val courseId: String,
     private val repo: CourseDetailsRepo
 ): BaseViewModel() {
 
@@ -13,7 +14,7 @@ class CourseReviewsViewModel(
 
     fun loadData() {
         reviews.makeCall {
-            repo.getReviews(-1)
+            repo.getReviews(courseId)
         }
     }
 }

@@ -4,6 +4,7 @@ import dev.skyit.elearning.auth.login.LoginViewModel
 import dev.skyit.elearning.student.ui.courses.SearchCoursesMinimalViewModel
 import dev.skyit.elearning.student.ui.courses.details.CourseLessonsViewModel
 import dev.skyit.elearning.student.ui.courses.details.CourseReviewsViewModel
+import dev.skyit.elearning.student.ui.courses.list.CoursesListViewModel
 import dev.skyit.elearning.student.ui.dashboard.ExploreViewModel
 import dev.skyit.elearning.student.ui.home.HomeViewModel
 import dev.skyit.elearning.student.ui.notifications.NotificationsViewModel
@@ -32,11 +33,15 @@ val viewModelsModule = module {
         NotificationsViewModel(get())
     }
 
-    viewModel {
-        CourseReviewsViewModel(get())
+    viewModel { (idx: String) ->
+        CourseReviewsViewModel(idx, get())
     }
 
-    viewModel {
-        CourseLessonsViewModel(get())
+    viewModel {(idx: String) ->
+        CourseLessonsViewModel(idx, get())
+    }
+
+    viewModel {(ctx: String?, cat: String) ->
+        CoursesListViewModel(ctx, cat, get())
     }
 }

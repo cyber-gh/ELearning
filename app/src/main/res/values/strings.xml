@@ -36,5 +36,6 @@
 
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <string name="error_load_video">Unable to retrieve video</string>
 
 </resources>

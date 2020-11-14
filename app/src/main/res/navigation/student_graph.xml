@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_navigation_explore_to_search_courses_minimal"
             app:destination="@id/search_courses_minimal" />
+        <action
+            android:id="@+id/action_navigation_explore_to_coursesListFragment"
+            app:destination="@id/coursesListFragment" />
     </fragment>
 
     <fragment
@@ -41,9 +44,28 @@
         android:id="@+id/search_courses_minimal"
         android:name="dev.skyit.elearning.student.ui.courses.SearchCoursesMinimalFragment"
         android:label="@string/search_courses"
-        tools:layout="@layout/fragment_search_course"/>
+        tools:layout="@layout/fragment_search_course">
+        <action
+            android:id="@+id/action_search_courses_minimal_to_courseDetailsFragment"
+            app:destination="@id/courseDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/courseDetailsFragment"
         android:name="dev.skyit.elearning.student.ui.courses.details.CourseDetailsFragment"
-        android:label="CourseDetailsFragment" />
+        android:label="CourseDetailsFragment"
+        tools:layout="@layout/fragment_course_details">
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/coursesListFragment"
+        android:name="dev.skyit.elearning.student.ui.courses.list.CoursesListFragment"
+        tools:layout="@layout/fragment_courses_list"
+        android:label="Courses">
+        <argument
+            android:name="categoryId"
+            app:argType="string" />
+    </fragment>
 </navigation>

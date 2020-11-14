@@ -52,6 +52,7 @@
             app:layout_constraintTop_toBottomOf="@+id/course_title" />
 
         <com.willy.ratingbar.ScaleRatingBar
+            android:clickable="false"
             android:id="@+id/rating_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

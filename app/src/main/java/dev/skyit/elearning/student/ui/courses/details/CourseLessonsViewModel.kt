@@ -6,6 +6,7 @@ import dev.skyit.elearning.student.repo.LessonModel
 import dev.skyit.elearning.student.ui.generic.BaseViewModel
 
 class CourseLessonsViewModel(
+    private val courseId: String,
     private val repo: CourseDetailsRepo
 ): BaseViewModel() {
 
@@ -13,7 +14,7 @@ class CourseLessonsViewModel(
 
     fun loadData() {
         lessons.makeCall {
-            repo.getLessons(-1)
+            repo.getLessons(courseId)
         }
     }
 

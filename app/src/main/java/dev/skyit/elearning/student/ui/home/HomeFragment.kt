@@ -55,6 +55,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     }
 
     private fun completeCategories(categories: List<CategoryModel>) {
+        binding.categoriesGroup.removeAllViews()
         categories.forEach {
             val chip = Chip(requireContext())
 
@@ -78,9 +79,12 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
 
                 this.ratingView.numStars = 5
                 this.ratingView.rating = data.rating.toFloat()
+                this.ratingView.isEnabled = false
 
             }, onItemClick = {
-                findNavController().navigate(R.id.action_navigation_home_to_courseDetailsFragment)
+                findNavController().navigate(
+                        HomeFragmentDirections.actionNavigationHomeToCourseDetailsFragment(it.course.id!!)
+                )
             }
         )
         binding.recyclerView.adapter = myCoursesAdapter

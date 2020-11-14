@@ -15,13 +15,18 @@ import dev.skyit.elearning.student.ui.generic.BaseFragment
 import dev.skyit.elearning.utility.SimpleRecyclerAdapter
 import dev.skyit.elearning.utility.setItemSpacing
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class CourseReviewsFragment: BaseFragment(R.layout.fragment_course_reviews) {
+class CourseReviewsFragment(
+        private val courseId: String
+): BaseFragment(R.layout.fragment_course_reviews) {
     private val binding: FragmentCourseReviewsBinding by viewBinding()
-    private val vModel: CourseReviewsViewModel by viewModel()
+    private val vModel: CourseReviewsViewModel by viewModel{
+        parametersOf(courseId)
+    }
 
     private lateinit var adapter: SimpleRecyclerAdapter<CourseReviewModel, ReviewListItemViewBinding>
 

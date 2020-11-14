@@ -43,5 +43,18 @@ class StudentActivity : AppCompatActivity() {
         }
     }
 
+    fun enterFullScreen() {
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        supportActionBar?.hide()
+        navView.isVisible = false
+
+    }
+
+    fun exitFullScreen() {
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        supportActionBar?.show()
+        navView.isVisible = true
+    }
+
 
 }

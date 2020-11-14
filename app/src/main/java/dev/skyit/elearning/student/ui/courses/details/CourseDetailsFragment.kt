@@ -1,5 +1,7 @@
 package dev.skyit.elearning.student.ui.courses.details
 
+import android.app.Activity
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -9,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.kotvertolet.youtubejextractor.YoutubeJExtractor
 import com.google.android.exoplayer2.C
@@ -26,13 +29,16 @@ import com.google.android.exoplayer2.util.MimeTypes
 import com.google.android.exoplayer2.util.Util
 import dev.skyit.elearning.R
 import dev.skyit.elearning.databinding.FragmentCourseDetailsBinding
+import dev.skyit.elearning.student.StudentActivity
 import dev.skyit.elearning.student.ui.generic.BaseFragment
+import dev.skyit.elearning.utility.errAlert
 import dev.skyit.elearning.utility.snack
 import kotlinx.coroutines.*
 
 class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
 
     private val binding: FragmentCourseDetailsBinding by viewBinding()
+    private val args: CourseDetailsFragmentArgs by navArgs()
 
     private lateinit var adapter: CourseDetailsPagerAdapter
 
@@ -41,7 +47,7 @@ class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        adapter = CourseDetailsPagerAdapter(childFragmentManager)
+        adapter = CourseDetailsPagerAdapter(childFragmentManager, args.courseId)
         binding.viewpager.adapter = adapter
 
         binding.tabLayout.setupWithViewPager(binding.viewpager)
@@ -106,66 +112,49 @@ class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
 
         GlobalScope.launch(Dispatchers.IO) {
             val extractor = YoutubeJExtractor()
-            val data = extractor.extract("3l9jlulT4cQ")
+            val data = kotlin.runCatching {
+                extractor.extract("3l9jlulT4cQ")
+            }.getOrNull() ?: return@launch errAlert(getString(R.string.error_load_video))
             withContext(Dispatchers.Main) {
 
-//                val meter = DefaultBandwidthMeter()
-//                val trackSelector = DefaultTrackSelector(AdaptiveTrackSelection.Factory())
-//                val exoPlayer = ExoPlayerFactory.newSimpleInstance(requireContext())
                 val srtFile = "http://192.168.1.130:3000/srt_file"
-//                val srtFile = "http://192.168.1.155:8000/avatar.srt"
                 val videoUri = Uri.parse(data!!.streamingData.muxedStreams.last().url)
                 val subtitleUri = Uri.parse(srtFile)
                 val player = SimpleExoPlayer.Builder(requireContext()).build()
                 binding.playerView.player = player
                 playWithCaption(player, videoUri, subtitleUri)
 
-
-//                lifecycleScope.launch {
-//                    while (true) {
-//                        delay(500)
-//
-//                    }
-//                }
-
-
-//                player.setMediaItem(MediaItem.fromUri(videoUri))
-//                player.prepare()
-//                player.play()
             }
         }
-
-
-
-
-//        val player = SimpleExoPlayer.Builder(requireContext()).build()
-//        binding.playerView.player = player
-//
-//        val media = MediaItem.fromUri(link)
-//        player.setMediaItem(media)
-//        player.prepare()
-//
-//        player.play()
 
     }
 
     override fun onPause() {
         super.onPause()
-
+        (activity as? StudentActivity)?.exitFullScreen()
         binding.playerView.player?.stop()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (activity?.resources?.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            (activity as? StudentActivity)?.enterFullScreen()
+        } else {
+            (activity as? StudentActivity)?.exitFullScreen()
+        }
     }
 }
 
 
-class CourseDetailsPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(
+class CourseDetailsPagerAdapter(fm: FragmentManager, private val courseId: String) : FragmentStatePagerAdapter(
     fm,
     FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
 ) {
 
     private val fragments: List<Fragment> = listOf(
         InfoCourseFragment(),
-        CourseReviewsFragment(),
-        CourseLessonsFragment()
+        CourseReviewsFragment(courseId),
+        CourseLessonsFragment(courseId)
     )
 
     override fun getItem(position: Int): Fragment {

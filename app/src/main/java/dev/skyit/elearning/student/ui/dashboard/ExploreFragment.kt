@@ -5,6 +5,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import coil.api.load
 import dev.skyit.elearning.R
 import dev.skyit.elearning.databinding.CategoryListItemViewBinding
 import dev.skyit.elearning.databinding.FragmentExploreBinding
@@ -37,11 +38,19 @@ class ExploreFragment : BaseFragment(R.layout.fragment_explore) {
 
         vModel.categoriesLive.observe(viewLifecycleOwner, Observer {
             binding.categoriesList.removeAllViews()
-            it.forEach {
+            it.forEach {model ->
                 val item = CategoryListItemViewBinding.inflate(layoutInflater)
-                item.categoryTitle.text = it.name
+                item.categoryTitle.text = model.name
 
+                if (model.url.isNotEmpty()) {
+                    item.imageView2.load(model.url)
+                }
                 binding.categoriesList.addView(item.root)
+                item.categoryTitle.setOnClickListener {
+                    findNavController().navigate(
+                            ExploreFragmentDirections.actionNavigationExploreToCoursesListFragment(model.category.id!!)
+                    )
+                }
             }
         })
 
