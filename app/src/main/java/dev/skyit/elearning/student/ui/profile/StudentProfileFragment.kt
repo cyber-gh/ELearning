@@ -20,6 +20,7 @@ import dev.skyit.elearning.R
 import dev.skyit.elearning.databinding.FragmentProfileBinding
 import dev.skyit.elearning.student.cache.CacheManager
 import kotlinx.android.synthetic.main.fragment_profile.*
+import org.koin.android.ext.android.bind
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.compat.ScopeCompat.viewModel
 import thinkit.redesign.ui.generic.ActivityDestination
@@ -30,17 +31,14 @@ class StudentProfileFragment: Fragment(R.layout.fragment_profile) {
     private val binding: FragmentProfileBinding by viewBinding()
 
     private val cache: CacheManager by inject()
-//
-//    private lateinit var notificationAdapter: SimpleRecyclerAdapter<NotificationModel, NotificationsListItemViewBinding>
-//
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.accEmail.text = cache.email
         val imageUrl = "http://i.imgur.com/DvpvklR.png"
         //image info config with valid image url so this should display image
         val imageInfo: NameInitialsCircleImageView.ImageInfo = NameInitialsCircleImageView.ImageInfo
-            .Builder("RR")
+            .Builder(cache.email.take(2))
             .setTextColor(android.R.color.primary_text_dark)
             .setTextFont(R.font.montserrat)
             .setImageUrl(imageUrl)

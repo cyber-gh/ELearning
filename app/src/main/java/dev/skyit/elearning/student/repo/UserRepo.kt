@@ -19,6 +19,7 @@ class UserRepoImpl(
         val param = UserAuth(email = email, password = pass)
         val answer = LoginTagApi().loginParam(param)
         cacheManager.loginToken = answer.token!!
+        cacheManager.email = email
         answer.email!!
     }
 }

@@ -7,10 +7,9 @@ import androidx.preference.PreferenceManager
 
 interface CacheManager {
     var isFirstTime: Boolean
-
     var loginToken: String
     var aswaqDeviceId: Int
-
+    var email: String
     var appLanguage: String // either en or ar
 
 }
@@ -24,4 +23,5 @@ class CacheManagerImpl (
     override var loginToken: String by PreferenceString("")
     override var aswaqDeviceId: Int by PreferenceInt(-1)
     override var appLanguage: String by PreferenceString("en")
+    override var email: String by PreferenceString("")
 }
