@@ -1,6 +1,5 @@
 package dev.skyit.elearning.student.ui.courses.details
 
-import android.app.Activity
 import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
@@ -10,20 +9,17 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.kotvertolet.youtubejextractor.YoutubeJExtractor
 import com.google.android.exoplayer2.C
 import com.google.android.exoplayer2.Format
-import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
 import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.MergingMediaSource
 import com.google.android.exoplayer2.source.SingleSampleMediaSource
-import com.google.android.exoplayer2.text.Cue
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.MimeTypes
 import com.google.android.exoplayer2.util.Util
@@ -46,7 +42,7 @@ class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.skipCourse.isVisible = false;
 
         adapter = CourseDetailsPagerAdapter(childFragmentManager, args.courseId)
         binding.viewpager.adapter = adapter
@@ -60,8 +56,15 @@ class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
             binding.cotinueLearningBtn.isVisible = false
             binding.textView12.isVisible = false
             binding.textView13.isVisible = false
+            binding.skipCourse.isVisible = true;
             configurePlayer()
         }
+
+        binding.skipCourse.setOnClickListener({
+            onPause();
+            val dialog = TestCourseDialog()
+            dialog.show(childFragmentManager, "testCourseDialog")
+        })
     }
 
     private fun playWithCaption(player: SimpleExoPlayer, videoUri: Uri, subtitleUri: Uri) {

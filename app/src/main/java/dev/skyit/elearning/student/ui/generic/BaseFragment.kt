@@ -1,6 +1,5 @@
 package dev.skyit.elearning.student.ui.generic
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
