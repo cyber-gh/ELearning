@@ -2,6 +2,7 @@ package dev.skyit.elearning.student.repo
 
 import dev.skyit.api.CategoriesGetApi
 import dev.skyit.api.CoursesGetApi
+import dev.skyit.api.TeachersGetApi
 import dev.skyit.api.WorkspaceGetApi
 import dev.skyit.elearning.student.cache.CacheManager
 import dev.skyit.model.*
