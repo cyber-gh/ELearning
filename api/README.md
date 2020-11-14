@@ -31,19 +31,19 @@ This runs all tests and packages the library.
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://192.168.1.156:9999*
+All URIs are relative to *http://http://192.168.1.156:9999*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*FoobarTagApi* | [**idOfFoobarEndpoint**](docs/FoobarTagApi.md#idoffoobarendpoint) | **POST** /foobar | Foobar does some amazing stuff.
+*LoginTagApi* | [**loginParam**](docs/LoginTagApi.md#loginparam) | **POST** /login | Login into application.
+*RegisterTagApi* | [**registerParam**](docs/RegisterTagApi.md#registerparam) | **POST** /register | Register to application.
 
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
- - [dev.skyit.model.FooBarRequest](docs/FooBarRequest.md)
- - [dev.skyit.model.FooBarResponse](docs/FooBarResponse.md)
- - [dev.skyit.model.FooBarResponseBaz](docs/FooBarResponseBaz.md)
+ - [dev.skyit.model.Session](docs/Session.md)
+ - [dev.skyit.model.UserAuth](docs/UserAuth.md)
 
 
 <a name="documentation-for-authorization"></a>

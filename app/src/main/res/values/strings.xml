@@ -24,4 +24,6 @@
     <string name="my_courses">My Courses</string>
     <string name="teacher">Teacher</string>
     <string name="student">Student</string>
+    <string name="keyword">Keyword</string>
+    <string name="search_courses">Search Courses</string>
 </resources>

@@ -17,6 +17,8 @@ import dev.skyit.elearning.utility.errAlert
 import dev.skyit.elearning.utility.snack
 import dev.skyit.elearning.utility.txt
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import thinkit.redesign.ui.generic.ActivityDestination
+import thinkit.redesign.ui.generic.navigate
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -36,6 +38,8 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
         vModel.state.observe(viewLifecycleOwner, Observer {
             if (it is LoadingResource.Success) {
                 snack("Logged in success")
+
+                activity?.navigate(ActivityDestination.Student)
             }
             if (it is LoadingResource.Error) {
                 errAlert(it.errorMessage)

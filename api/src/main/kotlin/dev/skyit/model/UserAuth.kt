@@ -23,7 +23,7 @@ import com.squareup.moshi.Json
 
 data class UserAuth (
     @Json(name = "_id")
-    val id: kotlin.Array<kotlin.Int>? = null,
+    val id: kotlin.String? = null,
     @Json(name = "email")
     val email: kotlin.String? = null,
     @Json(name = "password")

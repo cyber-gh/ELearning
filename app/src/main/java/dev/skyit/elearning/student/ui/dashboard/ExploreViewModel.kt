@@ -7,7 +7,8 @@ import dev.skyit.elearning.student.repo.CategoriesRepo
 import dev.skyit.elearning.student.repo.CategoryModel
 import dev.skyit.elearning.student.ui.generic.BaseViewModel
 
-class DashboardViewModel(
+class ExploreViewModel(
+
 ) : BaseViewModel() {
 
 

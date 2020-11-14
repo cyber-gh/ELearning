@@ -196,7 +196,7 @@ dependencies {
 
 openApiGenerate {
     generatorName = "kotlin"
-    inputSpec = "$rootDir/app/openapi.yaml".toString()
+    inputSpec = "$rootDir/app/openapi.jsonspo".toString()
     outputDir = "$rootDir/api/".toString()
     apiPackage = "dev.skyit.api"
     invokerPackage = "dev.skyit.invoker"

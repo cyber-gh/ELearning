@@ -15,7 +15,11 @@
         android:id="@+id/navigation_explore"
         android:name="dev.skyit.elearning.student.ui.dashboard.ExploreFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_navigation_explore_to_search_courses_minimal"
+            app:destination="@id/search_courses_minimal" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -27,4 +31,11 @@
         android:name="dev.skyit.elearning.student.ui.profile.StudentProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+
+        android:id="@+id/search_courses_minimal"
+        android:name="dev.skyit.elearning.student.ui.courses.SearchCoursesMinimalFragment"
+        android:label="@string/search_courses"
+        tools:layout="@layout/fragment_search_course"/>
 </navigation>

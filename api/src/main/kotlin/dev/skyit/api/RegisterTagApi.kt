@@ -30,7 +30,7 @@ class RegisterTagApi(basePath: kotlin.String = defaultBasePath) : ApiClient(base
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://some-url.com")
+            System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://192.168.1.156:9999")
         }
     }
 

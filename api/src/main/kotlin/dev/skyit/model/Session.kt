@@ -24,7 +24,7 @@ import com.squareup.moshi.Json
 
 data class Session (
     @Json(name = "_id")
-    val id: kotlin.Array<kotlin.Int>? = null,
+    val id: kotlin.String? = null,
     @Json(name = "created_at")
     val createdAt: java.time.OffsetDateTime? = null,
     @Json(name = "email")

@@ -13,5 +13,7 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        supportActionBar?.hide()
+
     }
 }

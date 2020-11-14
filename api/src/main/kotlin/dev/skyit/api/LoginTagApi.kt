@@ -30,7 +30,7 @@ class LoginTagApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePat
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://some-url.com")
+            System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://192.168.1.156:9999")
         }
     }
 

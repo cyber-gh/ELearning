@@ -29,5 +29,12 @@ class StudentActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            if (destination.id == R.id.search_courses_minimal) {
+                supportActionBar?.hide()
+            } else {
+                supportActionBar?.show()
+            }
+        }
     }
 }
