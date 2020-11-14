@@ -22,4 +22,8 @@ val generalModule = module {
     single<CacheManager> {
         CacheManagerImpl(androidContext())
     }
+    
+    single<NotificationRepo> {
+        NotificationRepoImlp()
+    }
 }

@@ -1,13 +1,19 @@
 package dev.skyit.elearning.student.ui.notifications
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import dev.skyit.elearning.student.repo.NotificationModel
+import dev.skyit.elearning.student.repo.NotificationRepo
+import dev.skyit.elearning.student.ui.generic.BaseViewModel
 
-class NotificationsViewModel : ViewModel() {
+class NotificationsViewModel(
+    private val notificationRepo: NotificationRepo
+) : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+    val notificationsLive = MutableLiveData<List<NotificationModel>>()
+
+    fun loadData() {
+        notificationsLive.makeCall {
+            notificationRepo.getNotifications()
+        }
     }
-    val text: LiveData<String> = _text
 }
