@@ -22,7 +22,7 @@ insert teacher
 //import dev.skyit.model.*
 
 val apiInstance = TeacherInsertApi()
-val body : InlineObject6 =  // InlineObject6 | 
+val body : InlineObject8 =  // InlineObject8 | 
 try {
     val result : InlineResponse2001 = apiInstance.insertTeachersParam(body)
     println(result)
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject6**](InlineObject6.md)|  | [optional]
+ **body** | [**InlineObject8**](InlineObject8.md)|  | [optional]
 
 ### Return type
 

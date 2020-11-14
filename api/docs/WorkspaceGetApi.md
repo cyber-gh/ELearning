@@ -22,7 +22,7 @@ get workspaces
 //import dev.skyit.model.*
 
 val apiInstance = WorkspaceGetApi()
-val body : InlineObject7 =  // InlineObject7 | 
+val body : InlineObject9 =  // InlineObject9 | 
 try {
     val result : InlineResponse2003 = apiInstance.getWorkspaceParam(body)
     println(result)
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject7**](InlineObject7.md)|  | [optional]
+ **body** | [**InlineObject9**](InlineObject9.md)|  | [optional]
 
 ### Return type
 

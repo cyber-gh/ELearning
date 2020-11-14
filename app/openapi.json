@@ -125,6 +125,35 @@
         }
       }
     },
+    "/courses/get/user": {
+      "post": {
+        "description": "courses get user",
+        "tags": [
+          "courses-getUser"
+        ],
+        "operationId": "coursesGetUserParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/coursesGetUserResponse"
+          }
+        }
+      }
+    },
     "/courses/insert": {
       "post": {
         "description": "insert courses",
@@ -214,6 +243,48 @@
         "responses": {
           "200": {
             "$ref": "#/responses/registeredSessionResponse"
+          }
+        }
+      }
+    },
+    "/reviews/add": {
+      "post": {
+        "description": "add review",
+        "tags": [
+          "reviews-add"
+        ],
+        "operationId": "addReviewParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "course_id": {
+                      "type": "string",
+                      "x-go-name": "CourseId"
+                    },
+                    "review": {
+                      "$ref": "#/definitions/Review"
+                    }
+                  },
+                  "x-go-name": "Data"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/addReviewResponse"
           }
         }
       }
@@ -516,6 +587,10 @@
           "type": "string",
           "x-go-name": "Feedback"
         },
+        "name": {
+          "type": "string",
+          "x-go-name": "Name"
+        },
         "rating": {
           "type": "integer",
           "format": "int32",
@@ -654,6 +729,24 @@
     }
   },
   "responses": {
+    "addReviewResponse": {
+      "description": "add review"
+    },
+    "coursesGetUserResponse": {
+      "description": "get teachers",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Course"
+            },
+            "x-go-name": "Data"
+          }
+        }
+      }
+    },
     "getCategoriesResponse": {
       "description": "get categories",
       "schema": {

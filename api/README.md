@@ -38,10 +38,12 @@ Class | Method | HTTP request | Description
 *CategoriesGetApi* | [**getCategoriesParam**](docs/CategoriesGetApi.md#getcategoriesparam) | **POST** /categories/get | 
 *CategoriesInsertApi* | [**insertCategoriesParam**](docs/CategoriesInsertApi.md#insertcategoriesparam) | **POST** /categories/insert | 
 *CoursesGetApi* | [**getCoursesParam**](docs/CoursesGetApi.md#getcoursesparam) | **POST** /courses/get | 
+*CoursesGetUserApi* | [**coursesGetUserParam**](docs/CoursesGetUserApi.md#coursesgetuserparam) | **POST** /courses/get/user | 
 *CoursesInsertApi* | [**insertCoursesParam**](docs/CoursesInsertApi.md#insertcoursesparam) | **POST** /courses/insert | 
 *CoursesJoinApi* | [**joinCoursesParam**](docs/CoursesJoinApi.md#joincoursesparam) | **POST** /courses/join | 
 *LoginTagApi* | [**loginParam**](docs/LoginTagApi.md#loginparam) | **POST** /login | Login into application.
 *RegisterTagApi* | [**registerParam**](docs/RegisterTagApi.md#registerparam) | **POST** /register | Register to application.
+*ReviewsAddApi* | [**addReviewParam**](docs/ReviewsAddApi.md#addreviewparam) | **POST** /reviews/add | 
 *StudentsGetApi* | [**getStudentsParam**](docs/StudentsGetApi.md#getstudentsparam) | **POST** /students/get | 
 *StudentsInsertApi* | [**insertStudentsParam**](docs/StudentsInsertApi.md#insertstudentsparam) | **POST** /students/insert | 
 *TeacherInsertApi* | [**insertTeachersParam**](docs/TeacherInsertApi.md#insertteachersparam) | **POST** /teacher/insert | 
@@ -58,6 +60,7 @@ Class | Method | HTTP request | Description
  - [dev.skyit.model.CoursesGetData](docs/CoursesGetData.md)
  - [dev.skyit.model.InlineObject](docs/InlineObject.md)
  - [dev.skyit.model.InlineObject1](docs/InlineObject1.md)
+ - [dev.skyit.model.InlineObject10](docs/InlineObject10.md)
  - [dev.skyit.model.InlineObject2](docs/InlineObject2.md)
  - [dev.skyit.model.InlineObject3](docs/InlineObject3.md)
  - [dev.skyit.model.InlineObject4](docs/InlineObject4.md)
@@ -65,12 +68,14 @@ Class | Method | HTTP request | Description
  - [dev.skyit.model.InlineObject6](docs/InlineObject6.md)
  - [dev.skyit.model.InlineObject7](docs/InlineObject7.md)
  - [dev.skyit.model.InlineObject8](docs/InlineObject8.md)
+ - [dev.skyit.model.InlineObject9](docs/InlineObject9.md)
  - [dev.skyit.model.InlineResponse200](docs/InlineResponse200.md)
  - [dev.skyit.model.InlineResponse2001](docs/InlineResponse2001.md)
  - [dev.skyit.model.InlineResponse2002](docs/InlineResponse2002.md)
  - [dev.skyit.model.InlineResponse2003](docs/InlineResponse2003.md)
  - [dev.skyit.model.Lesson](docs/Lesson.md)
  - [dev.skyit.model.Review](docs/Review.md)
+ - [dev.skyit.model.ReviewsAddData](docs/ReviewsAddData.md)
  - [dev.skyit.model.Session](docs/Session.md)
  - [dev.skyit.model.Student](docs/Student.md)
  - [dev.skyit.model.UserAuth](docs/UserAuth.md)

@@ -148,6 +148,12 @@ class CourseDetailsFragment: BaseFragment(R.layout.fragment_course_details) {
 //        player.play()
 
     }
+
+    override fun onPause() {
+        super.onPause()
+
+        binding.playerView.player?.stop()
+    }
 }
 
 

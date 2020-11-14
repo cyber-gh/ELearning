@@ -1,9 +1,6 @@
 package dev.skyit.elearning.student.repo
 
-import dev.skyit.api.CategoriesGetApi
-import dev.skyit.api.CoursesGetApi
-import dev.skyit.api.TeachersGetApi
-import dev.skyit.api.WorkspaceGetApi
+import dev.skyit.api.*
 import dev.skyit.elearning.student.cache.CacheManager
 import dev.skyit.model.*
 import kotlinx.coroutines.Dispatchers
@@ -57,18 +54,22 @@ class CoursesRepoImpl(
         }
     }
 
-    override suspend fun getMyCourses(): List<CourseModel> {
-        return listOf(
-            CourseModel("Physics - Basics"),
-            CourseModel("Physics - Aerodynamics"),
-            CourseModel("Physics - Law of Motion"),
-            CourseModel("Physics - Fluids"),
-        )
+    override suspend fun getMyCourses(): List<CourseModel>  = withContext(Dispatchers.IO){
+        CoursesGetUserApi().coursesGetUserParam(InlineObject3(cacheManager.loginToken)).data!!.map {
+            val rating = if (it.reviews != null &&  it.reviews!!.count() > 0) it.reviews!!.sumBy { it.rating!! } / it.reviews!!.count() else 0
+            CourseModel(it.name!!, it.url!!, it.teacherId!!, rating)
+        }
+//        return listOf(
+//            CourseModel("Physics - Basics"),
+//            CourseModel("Physics - Aerodynamics"),
+//            CourseModel("Physics - Law of Motion"),
+//            CourseModel("Physics - Fluids"),
+//        )
     }
 
     override suspend fun getWorkspaces(): List<Workspace> = withContext(Dispatchers.IO) {
 
-        WorkspaceGetApi().getWorkspaceParam(InlineObject7(cacheManager.loginToken)).data!!.toList()
+        WorkspaceGetApi().getWorkspaceParam(InlineObject9(cacheManager.loginToken)).data!!.toList()
     }
 
     override suspend fun getCategories(contextId: String?): List<CategoryModel> = withContext(Dispatchers.IO) {

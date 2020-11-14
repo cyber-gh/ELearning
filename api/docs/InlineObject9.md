@@ -1,10 +1,9 @@
 
-# InlineObject5
+# InlineObject9
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ReviewsAddData**](ReviewsAddData.md) |  |  [optional]
 **token** | **kotlin.String** |  |  [optional]
 
 

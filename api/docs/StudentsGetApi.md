@@ -22,7 +22,7 @@ get students
 //import dev.skyit.model.*
 
 val apiInstance = StudentsGetApi()
-val body : InlineObject4 =  // InlineObject4 | 
+val body : InlineObject6 =  // InlineObject6 | 
 try {
     val result : InlineResponse2002 = apiInstance.getStudentsParam(body)
     println(result)
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject4**](InlineObject4.md)|  | [optional]
+ **body** | [**InlineObject6**](InlineObject6.md)|  | [optional]
 
 ### Return type
 

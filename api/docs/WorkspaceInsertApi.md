@@ -22,7 +22,7 @@ insert workspaces
 //import dev.skyit.model.*
 
 val apiInstance = WorkspaceInsertApi()
-val body : InlineObject8 =  // InlineObject8 | 
+val body : InlineObject10 =  // InlineObject10 | 
 try {
     val result : InlineResponse2003 = apiInstance.insertWorkspaceParam(body)
     println(result)
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject8**](InlineObject8.md)|  | [optional]
+ **body** | [**InlineObject10**](InlineObject10.md)|  | [optional]
 
 ### Return type
 

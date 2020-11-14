@@ -11,7 +11,7 @@
 */
 package dev.skyit.api
 
-import dev.skyit.model.InlineObject8
+import dev.skyit.model.InlineObject10
 import dev.skyit.model.InlineResponse2003
 
 import org.openapitools.client.infrastructure.ApiClient
@@ -45,7 +45,7 @@ class WorkspaceInsertApi(basePath: kotlin.String = defaultBasePath) : ApiClient(
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun insertWorkspaceParam(body: InlineObject8?) : InlineResponse2003 {
+    fun insertWorkspaceParam(body: InlineObject10?) : InlineResponse2003 {
         val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

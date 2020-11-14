@@ -11,7 +11,7 @@
 */
 package dev.skyit.api
 
-import dev.skyit.model.InlineObject7
+import dev.skyit.model.InlineObject9
 import dev.skyit.model.InlineResponse2003
 
 import org.openapitools.client.infrastructure.ApiClient
@@ -45,7 +45,7 @@ class WorkspaceGetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(bas
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getWorkspaceParam(body: InlineObject7?) : InlineResponse2003 {
+    fun getWorkspaceParam(body: InlineObject9?) : InlineResponse2003 {
         val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

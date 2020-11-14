@@ -1,19 +1,19 @@
-# CoursesJoinApi
+# ReviewsAddApi
 
 All URIs are relative to *http://192.168.1.156:9999*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**joinCoursesParam**](CoursesJoinApi.md#joinCoursesParam) | **POST** /courses/join | 
+[**addReviewParam**](ReviewsAddApi.md#addReviewParam) | **POST** /reviews/add | 
 
 
-<a name="joinCoursesParam"></a>
-# **joinCoursesParam**
-> joinCoursesParam(body)
+<a name="addReviewParam"></a>
+# **addReviewParam**
+> addReviewParam(body)
 
 
 
-join courses
+add review
 
 ### Example
 ```kotlin
@@ -21,15 +21,15 @@ join courses
 //import org.openapitools.client.infrastructure.*
 //import dev.skyit.model.*
 
-val apiInstance = CoursesJoinApi()
-val body : InlineObject4 =  // InlineObject4 | 
+val apiInstance = ReviewsAddApi()
+val body : InlineObject5 =  // InlineObject5 | 
 try {
-    apiInstance.joinCoursesParam(body)
+    apiInstance.addReviewParam(body)
 } catch (e: ClientException) {
-    println("4xx response calling CoursesJoinApi#joinCoursesParam")
+    println("4xx response calling ReviewsAddApi#addReviewParam")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling CoursesJoinApi#joinCoursesParam")
+    println("5xx response calling ReviewsAddApi#addReviewParam")
     e.printStackTrace()
 }
 ```
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject4**](InlineObject4.md)|  | [optional]
+ **body** | [**InlineObject5**](InlineObject5.md)|  | [optional]
 
 ### Return type
 

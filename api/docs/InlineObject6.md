@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**Student**](Student.md) |  |  [optional]
+**data** | **kotlin.String** |  |  [optional]
 **token** | **kotlin.String** |  |  [optional]
 
 

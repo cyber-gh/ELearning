@@ -11,7 +11,7 @@
 */
 package dev.skyit.api
 
-import dev.skyit.model.InlineObject5
+import dev.skyit.model.InlineObject7
 import dev.skyit.model.InlineResponse2001
 
 import org.openapitools.client.infrastructure.ApiClient
@@ -45,7 +45,7 @@ class StudentsInsertApi(basePath: kotlin.String = defaultBasePath) : ApiClient(b
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun insertStudentsParam(body: InlineObject5?) : InlineResponse2001 {
+    fun insertStudentsParam(body: InlineObject7?) : InlineResponse2001 {
         val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

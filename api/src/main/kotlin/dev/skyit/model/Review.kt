@@ -16,6 +16,7 @@ import com.squareup.moshi.Json
 /**
  * 
  * @param feedback 
+ * @param name 
  * @param rating 
  * @param studentId 
  */
@@ -23,6 +24,8 @@ import com.squareup.moshi.Json
 data class Review (
     @Json(name = "feedback")
     val feedback: kotlin.String? = null,
+    @Json(name = "name")
+    val name: kotlin.String? = null,
     @Json(name = "rating")
     val rating: kotlin.Int? = null,
     @Json(name = "student_id")

@@ -11,7 +11,7 @@
 */
 package dev.skyit.model
 
-import dev.skyit.model.ReviewsAddData
+import dev.skyit.model.Workspace
 
 import com.squareup.moshi.Json
 /**
@@ -20,9 +20,9 @@ import com.squareup.moshi.Json
  * @param token 
  */
 
-data class InlineObject5 (
+data class InlineObject10 (
     @Json(name = "data")
-    val data: ReviewsAddData? = null,
+    val data: Workspace? = null,
     @Json(name = "token")
     val token: kotlin.String? = null
 )

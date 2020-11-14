@@ -11,7 +11,6 @@
 */
 package dev.skyit.model
 
-import dev.skyit.model.Student
 
 import com.squareup.moshi.Json
 /**
@@ -22,7 +21,7 @@ import com.squareup.moshi.Json
 
 data class InlineObject6 (
     @Json(name = "data")
-    val data: Student? = null,
+    val data: kotlin.String? = null,
     @Json(name = "token")
     val token: kotlin.String? = null
 )

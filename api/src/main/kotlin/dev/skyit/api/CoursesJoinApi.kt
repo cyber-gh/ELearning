@@ -11,7 +11,7 @@
 */
 package dev.skyit.api
 
-import dev.skyit.model.InlineObject3
+import dev.skyit.model.InlineObject4
 
 import org.openapitools.client.infrastructure.ApiClient
 import org.openapitools.client.infrastructure.ClientException
@@ -43,7 +43,7 @@ class CoursesJoinApi(basePath: kotlin.String = defaultBasePath) : ApiClient(base
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun joinCoursesParam(body: InlineObject3?) : Unit {
+    fun joinCoursesParam(body: InlineObject4?) : Unit {
         val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

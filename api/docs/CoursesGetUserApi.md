@@ -1,19 +1,19 @@
-# StudentsInsertApi
+# CoursesGetUserApi
 
 All URIs are relative to *http://192.168.1.156:9999*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**insertStudentsParam**](StudentsInsertApi.md#insertStudentsParam) | **POST** /students/insert | 
+[**coursesGetUserParam**](CoursesGetUserApi.md#coursesGetUserParam) | **POST** /courses/get/user | 
 
 
-<a name="insertStudentsParam"></a>
-# **insertStudentsParam**
-> InlineResponse2001 insertStudentsParam(body)
+<a name="coursesGetUserParam"></a>
+# **coursesGetUserParam**
+> InlineResponse2001 coursesGetUserParam(body)
 
 
 
-insert students
+courses get user
 
 ### Example
 ```kotlin
@@ -21,16 +21,16 @@ insert students
 //import org.openapitools.client.infrastructure.*
 //import dev.skyit.model.*
 
-val apiInstance = StudentsInsertApi()
-val body : InlineObject7 =  // InlineObject7 | 
+val apiInstance = CoursesGetUserApi()
+val body : InlineObject3 =  // InlineObject3 | 
 try {
-    val result : InlineResponse2001 = apiInstance.insertStudentsParam(body)
+    val result : InlineResponse2001 = apiInstance.coursesGetUserParam(body)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling StudentsInsertApi#insertStudentsParam")
+    println("4xx response calling CoursesGetUserApi#coursesGetUserParam")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling StudentsInsertApi#insertStudentsParam")
+    println("5xx response calling CoursesGetUserApi#coursesGetUserParam")
     e.printStackTrace()
 }
 ```
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject7**](InlineObject7.md)|  | [optional]
+ **body** | [**InlineObject3**](InlineObject3.md)|  | [optional]
 
 ### Return type
 

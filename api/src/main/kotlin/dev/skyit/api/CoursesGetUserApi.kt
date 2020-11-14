@@ -11,8 +11,8 @@
 */
 package dev.skyit.api
 
-import dev.skyit.model.InlineObject6
-import dev.skyit.model.InlineResponse2002
+import dev.skyit.model.InlineObject3
+import dev.skyit.model.InlineResponse2001
 
 import org.openapitools.client.infrastructure.ApiClient
 import org.openapitools.client.infrastructure.ClientException
@@ -26,7 +26,7 @@ import org.openapitools.client.infrastructure.ResponseType
 import org.openapitools.client.infrastructure.Success
 import org.openapitools.client.infrastructure.toMultiValue
 
-class StudentsGetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
+class CoursesGetUserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -36,32 +36,32 @@ class StudentsGetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(base
 
     /**
     * 
-    * get students
+    * courses get user
     * @param body  (optional)
-    * @return InlineResponse2002
+    * @return InlineResponse2001
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getStudentsParam(body: InlineObject6?) : InlineResponse2002 {
+    fun coursesGetUserParam(body: InlineObject3?) : InlineResponse2001 {
         val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/students/get",
+            "/courses/get/user",
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val localVarResponse = request<InlineResponse2002>(
+        val localVarResponse = request<InlineResponse2001>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as InlineResponse2002
+            ResponseType.Success -> (localVarResponse as Success<*>).data as InlineResponse2001
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
