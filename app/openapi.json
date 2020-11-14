@@ -1,0 +1,763 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentation of our awesome API.",
+    "title": "awesome.",
+    "version": "1.0.0"
+  },
+  "host": "192.168.1.156:9999",
+  "basePath": "/",
+  "paths": {
+    "/categories/get": {
+      "post": {
+        "description": "get categories",
+        "tags": [
+          "categories-get"
+        ],
+        "operationId": "getCategoriesParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "string",
+                  "x-go-name": "Data"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/getCategoriesResponse"
+          }
+        }
+      }
+    },
+    "/categories/insert": {
+      "post": {
+        "description": "insert categories",
+        "tags": [
+          "categories-insert"
+        ],
+        "operationId": "insertCategoriesParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/Course"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/insertCategoriesResponse"
+          }
+        }
+      }
+    },
+    "/courses/get": {
+      "post": {
+        "description": "get courses",
+        "tags": [
+          "courses-get"
+        ],
+        "operationId": "getCoursesParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "cat_id": {
+                      "type": "string",
+                      "x-go-name": "CategoryId"
+                    },
+                    "workspace_id": {
+                      "type": "string",
+                      "x-go-name": "WorkspaceId"
+                    }
+                  },
+                  "x-go-name": "Data"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/getCoursesResponse"
+          }
+        }
+      }
+    },
+    "/courses/insert": {
+      "post": {
+        "description": "insert courses",
+        "tags": [
+          "courses-insert"
+        ],
+        "operationId": "insertCoursesParam",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/insertCoursesResponse"
+          }
+        }
+      }
+    },
+    "/courses/join": {
+      "post": {
+        "description": "join courses",
+        "tags": [
+          "courses-join"
+        ],
+        "operationId": "joinCoursesParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "string",
+                  "x-go-name": "CourseId"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/joinCoursesResponse"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "login-tag"
+        ],
+        "summary": "Login into application.",
+        "operationId": "loginParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/UserAuth"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/userSessionResponse"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "register-tag"
+        ],
+        "summary": "Register to application.",
+        "operationId": "registerParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/UserAuth"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/registeredSessionResponse"
+          }
+        }
+      }
+    },
+    "/students/get": {
+      "post": {
+        "description": "get students",
+        "tags": [
+          "students-get"
+        ],
+        "operationId": "getStudentsParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "string",
+                  "x-go-name": "Data"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/getStudentsResponse"
+          }
+        }
+      }
+    },
+    "/students/insert": {
+      "post": {
+        "description": "insert students",
+        "tags": [
+          "students-insert"
+        ],
+        "operationId": "insertStudentsParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/Student"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/insertStudentsResponse"
+          }
+        }
+      }
+    },
+    "/teacher/get": {
+      "post": {
+        "description": "get teachers",
+        "tags": [
+          "teachers-get"
+        ],
+        "operationId": "getTeachersParam",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/getTeachersResponse"
+          }
+        }
+      }
+    },
+    "/teacher/insert": {
+      "post": {
+        "description": "insert teacher",
+        "tags": [
+          "teacher-insert"
+        ],
+        "operationId": "insertTeachersParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/Teacher"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/insertTeachersResponse"
+          }
+        }
+      }
+    },
+    "/workspaces/get": {
+      "post": {
+        "description": "get workspaces",
+        "tags": [
+          "workspace-get"
+        ],
+        "operationId": "getWorkspaceParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/getWorkspaceResponse"
+          }
+        }
+      }
+    },
+    "/workspaces/insert": {
+      "post": {
+        "description": "insert workspaces",
+        "tags": [
+          "workspace-insert"
+        ],
+        "operationId": "insertWorkspaceParam",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/Workspace"
+                },
+                "token": {
+                  "type": "string",
+                  "x-go-name": "Token"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/insertWorkspaceResponse"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Category": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "name": {
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "url": {
+          "type": "string",
+          "x-go-name": "ImageUrl"
+        },
+        "workspace_id": {
+          "type": "string",
+          "x-go-name": "WorkspaceId"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "Course": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "cat_id": {
+          "type": "string",
+          "x-go-name": "CategoryId"
+        },
+        "difficulty": {
+          "type": "integer",
+          "format": "int32",
+          "x-go-name": "Difficulty"
+        },
+        "duration": {
+          "type": "integer",
+          "format": "int32",
+          "x-go-name": "Duration"
+        },
+        "lessons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Lesson"
+          },
+          "x-go-name": "Lessons"
+        },
+        "name": {
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Review"
+          },
+          "x-go-name": "Reviews"
+        },
+        "students": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-go-name": "Students"
+        },
+        "teacher_id": {
+          "type": "string",
+          "x-go-name": "TeacherId"
+        },
+        "teachers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-go-name": "Teachers"
+        },
+        "url": {
+          "type": "string",
+          "x-go-name": "ImageUrl"
+        },
+        "workspace_id": {
+          "type": "string",
+          "x-go-name": "WorkspaceId"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "Lesson": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-go-name": "Materials"
+        },
+        "students": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-go-name": "Students"
+        },
+        "video": {
+          "$ref": "#/definitions/Video"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "Review": {
+      "type": "object",
+      "properties": {
+        "feedback": {
+          "type": "string",
+          "x-go-name": "Feedback"
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32",
+          "x-go-name": "Rating"
+        },
+        "student_id": {
+          "type": "string",
+          "x-go-name": "StudentId"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "Session": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "x-go-name": "CreatedAt"
+        },
+        "email": {
+          "type": "string",
+          "x-go-name": "Email"
+        },
+        "token": {
+          "type": "string",
+          "x-go-name": "Token"
+        },
+        "user_type": {
+          "$ref": "#/definitions/UserType"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "Student": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "assignments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-go-name": "Assignments"
+        },
+        "courses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-go-name": "Courses"
+        },
+        "email": {
+          "type": "string",
+          "x-go-name": "Email"
+        },
+        "name": {
+          "type": "string",
+          "x-go-name": "Name"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "Teacher": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "courses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "x-go-name": "Courses"
+        },
+        "email": {
+          "type": "string",
+          "x-go-name": "Email"
+        },
+        "name": {
+          "type": "string",
+          "x-go-name": "Name"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "UserAuth": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "email": {
+          "type": "string",
+          "x-go-name": "Email"
+        },
+        "password": {
+          "type": "string",
+          "x-go-name": "Password"
+        },
+        "user_type": {
+          "$ref": "#/definitions/UserType"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "UserType": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-package": "e-learn/mongodb"
+    },
+    "Video": {
+      "type": "object",
+      "properties": {
+        "subtitles": {
+          "type": "string",
+          "x-go-name": "Subtitles"
+        },
+        "url": {
+          "type": "string",
+          "x-go-name": "URL"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "Workspace": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "name": {
+          "type": "string",
+          "x-go-name": "Name"
+        },
+        "type": {
+          "$ref": "#/definitions/WorkspaceType"
+        },
+        "url": {
+          "type": "string",
+          "x-go-name": "ImageUrl"
+        }
+      },
+      "x-go-package": "e-learn/mongodb"
+    },
+    "WorkspaceType": {
+      "type": "integer",
+      "format": "int64",
+      "x-go-package": "e-learn/mongodb"
+    }
+  },
+  "responses": {
+    "getCategoriesResponse": {
+      "description": "get categories",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Category"
+        }
+      }
+    },
+    "getCoursesResponse": {
+      "description": "get courses",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Course"
+        }
+      }
+    },
+    "getStudentsResponse": {
+      "description": "get students",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Student"
+        }
+      }
+    },
+    "getTeachersResponse": {
+      "description": "get teachers",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Teacher"
+        }
+      }
+    },
+    "getWorkspaceResponse": {
+      "description": "get workspaces",
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Workspace"
+        }
+      }
+    },
+    "insertCategoriesResponse": {
+      "description": "insert categories"
+    },
+    "insertCoursesResponse": {
+      "description": "insert courses"
+    },
+    "insertStudentsResponse": {
+      "description": "insert students"
+    },
+    "insertTeachersResponse": {
+      "description": "insert teacher"
+    },
+    "insertWorkspaceResponse": {
+      "description": "insert workspaces"
+    },
+    "joinCoursesResponse": {
+      "description": "join courses"
+    },
+    "registeredSessionResponse": {
+      "description": "A session of registered user",
+      "schema": {
+        "$ref": "#/definitions/Session"
+      }
+    },
+    "userSessionResponse": {
+      "description": "A session of authenticated user",
+      "schema": {
+        "$ref": "#/definitions/Session"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basic": {
+      "type": "basic"
+    }
+  }
+}

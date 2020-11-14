@@ -22,8 +22,15 @@
     <string name="not_valid_email">Not valid email</string>
     <string name="dont_match_field">Fields don\'t match</string>
     <string name="my_courses">My Courses</string>
-    <string name="teacher">Teacher</string>
+
     <string name="student">Student</string>
     <string name="keyword">Keyword</string>
     <string name="search_courses">Search Courses</string>
+    <string name="continue_learning">Continue Learning</string>
+    <string name="current_progress">Current progress</string>
+    <string name="about">About</string>
+    <string name="expected_time_complete">Expected time to complete</string>
+    <string name="teacher">Teacher</string>
+    <string name="language">Language</string>
+    <string name="enrolled_students">Enrolled students</string>
 </resources>

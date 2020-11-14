@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.GridLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import coil.api.load
@@ -15,7 +16,9 @@ import dev.skyit.elearning.databinding.FragmentHomeBinding
 import dev.skyit.elearning.student.repo.CategoryModel
 import dev.skyit.elearning.student.repo.CourseModel
 import dev.skyit.elearning.student.ui.generic.BaseFragment
+import dev.skyit.elearning.utility.LoadingResource
 import dev.skyit.elearning.utility.SimpleRecyclerAdapter
+import dev.skyit.elearning.utility.errAlert
 import dev.skyit.elearning.utility.setItemSpacing
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -41,6 +44,12 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         })
 
         vModel.loadData()
+
+        vModel.loadingState.observe(viewLifecycleOwner, Observer {
+            if (it is LoadingResource.Error) {
+                errAlert(it.errorMessage)
+            }
+        })
 
 
     }
@@ -70,6 +79,8 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
                 this.ratingView.numStars = 5
                 this.ratingView.rating = data.rating.toFloat()
 
+            }, onItemClick = {
+                findNavController().navigate(R.id.action_navigation_home_to_courseDetailsFragment)
             }
         )
         binding.recyclerView.adapter = myCoursesAdapter

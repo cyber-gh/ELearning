@@ -18,7 +18,14 @@ class SearchCoursesMinimalViewModel(
 
     init {
         viewModelScope.launch {
-            allCourses = coursesRepo.getCourses()
+            kotlin.runCatching {
+                coursesRepo.getCourses()
+
+            }.onSuccess {
+                allCourses = it
+                filteredCourses.postValue(allCourses)
+            }
+
         }
     }
 

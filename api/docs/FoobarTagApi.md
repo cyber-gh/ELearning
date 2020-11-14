@@ -1,6 +1,6 @@
 # FoobarTagApi
 
-All URIs are relative to *http://192.168.1.156:9999*
+All URIs are relative to *http://some-url.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
