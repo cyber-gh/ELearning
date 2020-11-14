@@ -14,4 +14,8 @@
     <color name="outline_color">@color/md_grey_200</color>
 
     <color name="main_text_color">#212121</color>
+
+    <color name="colorAccent">#FFFFFF</color>
+
+    <color name="lightgrey">#EEEEEE</color>
 </resources>
