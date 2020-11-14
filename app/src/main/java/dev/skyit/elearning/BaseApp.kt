@@ -14,7 +14,7 @@ class BaseApp: Application() {
         super.onCreate()
 
         startKoin {
-            androidLogger(Level.DEBUG)
+            androidLogger(Level.NONE)
             androidContext(this@BaseApp)
 
             modules(

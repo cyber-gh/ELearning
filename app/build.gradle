@@ -9,6 +9,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'com.google.firebase.crashlytics'
     id "org.openapi.generator" version "4.3.1"
+    id 'koin'
 }
 
 android {
@@ -132,7 +133,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //Kotlin Time API, read documentation before using XD
-    implementation "com.soywiz.korlibs.klock:klock:1.8.4"
+    implementation "com.soywiz.korlibs.klock:klock:2.0.0-alpha"
 
     //Serialization
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // or "kotlin-stdlib-jdk8"
@@ -177,7 +178,7 @@ dependencies {
 
     implementation 'com.kirich1409.viewbindingpropertydelegate:viewbindingpropertydelegate:1.0.0'
 
-    def koin_version = '2.2.0-alpha-1'
+    def koin_version = '2.2.0'
     // Koin for Android
     implementation "org.koin:koin-android:$koin_version"
     // Koin AndroidX Scope features

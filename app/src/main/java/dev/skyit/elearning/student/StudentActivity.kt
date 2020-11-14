@@ -3,6 +3,7 @@ package dev.skyit.elearning.student
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -32,8 +33,11 @@ class StudentActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             if (destination.id == R.id.search_courses_minimal) {
                 supportActionBar?.hide()
+                navView.isVisible = false
             } else {
                 supportActionBar?.show()
+
+                navView.isVisible = true
             }
         }
     }
