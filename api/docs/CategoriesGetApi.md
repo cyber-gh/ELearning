@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getCategoriesParam"></a>
 # **getCategoriesParam**
-> kotlin.Array&lt;Category&gt; getCategoriesParam(body)
+> InlineResponse200 getCategoriesParam(body)
 
 
 
@@ -24,7 +24,7 @@ get categories
 val apiInstance = CategoriesGetApi()
 val body : InlineObject =  // InlineObject | 
 try {
-    val result : kotlin.Array<Category> = apiInstance.getCategoriesParam(body)
+    val result : InlineResponse200 = apiInstance.getCategoriesParam(body)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CategoriesGetApi#getCategoriesParam")
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**kotlin.Array&lt;Category&gt;**](Category.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 

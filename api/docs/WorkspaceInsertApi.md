@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="insertWorkspaceParam"></a>
 # **insertWorkspaceParam**
-> insertWorkspaceParam(body)
+> InlineResponse2003 insertWorkspaceParam(body)
 
 
 
@@ -24,7 +24,8 @@ insert workspaces
 val apiInstance = WorkspaceInsertApi()
 val body : InlineObject8 =  // InlineObject8 | 
 try {
-    apiInstance.insertWorkspaceParam(body)
+    val result : InlineResponse2003 = apiInstance.insertWorkspaceParam(body)
+    println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkspaceInsertApi#insertWorkspaceParam")
     e.printStackTrace()
@@ -42,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -51,5 +52,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 

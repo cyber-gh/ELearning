@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getTeachersParam"></a>
 # **getTeachersParam**
-> kotlin.Array&lt;Teacher&gt; getTeachersParam()
+> InlineResponse2002 getTeachersParam()
 
 
 
@@ -23,7 +23,7 @@ get teachers
 
 val apiInstance = TeachersGetApi()
 try {
-    val result : kotlin.Array<Teacher> = apiInstance.getTeachersParam()
+    val result : InlineResponse2002 = apiInstance.getTeachersParam()
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TeachersGetApi#getTeachersParam")
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**kotlin.Array&lt;Teacher&gt;**](Teacher.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

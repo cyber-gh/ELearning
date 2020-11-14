@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getWorkspaceParam"></a>
 # **getWorkspaceParam**
-> kotlin.Array&lt;Workspace&gt; getWorkspaceParam(body)
+> InlineResponse2003 getWorkspaceParam(body)
 
 
 
@@ -24,7 +24,7 @@ get workspaces
 val apiInstance = WorkspaceGetApi()
 val body : InlineObject7 =  // InlineObject7 | 
 try {
-    val result : kotlin.Array<Workspace> = apiInstance.getWorkspaceParam(body)
+    val result : InlineResponse2003 = apiInstance.getWorkspaceParam(body)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkspaceGetApi#getWorkspaceParam")
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**kotlin.Array&lt;Workspace&gt;**](Workspace.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 

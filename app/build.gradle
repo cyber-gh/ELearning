@@ -199,6 +199,12 @@ dependencies {
 
     implementation 'com.github.Inconnu08:android-ratingreviews:1.2.0'
 
+    implementation 'com.github.kotvertolet:youtube-jextractor:0.3.3'
+
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.4.1"))
+    implementation("com.squareup.okhttp3:okhttp")              // No version!
+    implementation("com.squareup.okhttp3:okhttp-urlconnection") // No version!
+
 
 }
 

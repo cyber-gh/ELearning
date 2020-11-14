@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getCoursesParam"></a>
 # **getCoursesParam**
-> kotlin.Array&lt;Course&gt; getCoursesParam(body)
+> InlineResponse2001 getCoursesParam(body)
 
 
 
@@ -24,7 +24,7 @@ get courses
 val apiInstance = CoursesGetApi()
 val body : InlineObject2 =  // InlineObject2 | 
 try {
-    val result : kotlin.Array<Course> = apiInstance.getCoursesParam(body)
+    val result : InlineResponse2001 = apiInstance.getCoursesParam(body)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CoursesGetApi#getCoursesParam")
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**kotlin.Array&lt;Course&gt;**](Course.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

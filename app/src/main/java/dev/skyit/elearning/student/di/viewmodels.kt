@@ -3,6 +3,7 @@ package dev.skyit.elearning.student.di
 import dev.skyit.elearning.auth.login.LoginViewModel
 import dev.skyit.elearning.student.repo.CourseReviewModel
 import dev.skyit.elearning.student.ui.courses.SearchCoursesMinimalViewModel
+import dev.skyit.elearning.student.ui.courses.details.CourseLessonsViewModel
 import dev.skyit.elearning.student.ui.courses.details.CourseReviewsViewModel
 import dev.skyit.elearning.student.ui.dashboard.ExploreViewModel
 import dev.skyit.elearning.student.ui.home.HomeViewModel
@@ -34,5 +35,9 @@ val viewModelsModule = module {
 
     viewModel {
         CourseReviewsViewModel(get())
+    }
+
+    viewModel {
+        CourseLessonsViewModel(get())
     }
 }

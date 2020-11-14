@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="insertTeachersParam"></a>
 # **insertTeachersParam**
-> insertTeachersParam(body)
+> InlineResponse2001 insertTeachersParam(body)
 
 
 
@@ -24,7 +24,8 @@ insert teacher
 val apiInstance = TeacherInsertApi()
 val body : InlineObject6 =  // InlineObject6 | 
 try {
-    apiInstance.insertTeachersParam(body)
+    val result : InlineResponse2001 = apiInstance.insertTeachersParam(body)
+    println(result)
 } catch (e: ClientException) {
     println("4xx response calling TeacherInsertApi#insertTeachersParam")
     e.printStackTrace()
@@ -42,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -51,5 +52,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 

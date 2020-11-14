@@ -19,6 +19,11 @@ data class CourseReviewModel(val name: String,
                              val comment: String,
                              val rating: Int)
 
+data class LessonModel(
+    val name: String,
+    val video: Video
+)
+
 interface CoursesRepo {
     suspend fun getCourses(contextId: String? = null, categoryId: String? = null) : List<CourseModel>
     suspend fun getMyCourses() : List<CourseModel>
@@ -31,6 +36,7 @@ interface WorkspaceRepo {
 
 interface CourseDetailsRepo {
     suspend fun getReviews(courseId: Int): List<CourseReviewModel>
+    suspend fun getLessons(courseId: Int): List<LessonModel>
 }
 
 class CoursesRepoImpl(
@@ -44,7 +50,7 @@ class CoursesRepoImpl(
         val ctx = contextId ?: getWorkspaces().first().id!!
         CoursesGetApi().getCoursesParam(
             InlineObject2(CoursesGetData("", ctx), cacheManager.loginToken)
-        ).map {
+        ).data!!.map {
             val rating = if (it.reviews != null &&  it.reviews!!.count() > 0) it.reviews!!.sumBy { it.rating!! } / it.reviews!!.count() else 0
             CourseModel(it.name!!, it.url!!, it.teacherId!!, rating)
         }
@@ -61,12 +67,12 @@ class CoursesRepoImpl(
 
     override suspend fun getWorkspaces(): List<Workspace> = withContext(Dispatchers.IO) {
 
-        WorkspaceGetApi().getWorkspaceParam(InlineObject7(cacheManager.loginToken)).toList()
+        WorkspaceGetApi().getWorkspaceParam(InlineObject7(cacheManager.loginToken)).data!!.toList()
     }
 
     override suspend fun getCategories(contextId: String?): List<CategoryModel> = withContext(Dispatchers.IO) {
         val ctx = contextId ?: getWorkspaces().first().id!!
-        CategoriesGetApi().getCategoriesParam(InlineObject(data = ctx,cacheManager.loginToken)).toList().map {
+        CategoriesGetApi().getCategoriesParam(InlineObject(data = ctx,cacheManager.loginToken)).data!!.toList().map {
             CategoryModel(it.name!!)
         }
     }
@@ -77,6 +83,19 @@ class CoursesRepoImpl(
             CourseReviewModel("John Cena", "2 days ago", "Best course ever", 5),
             CourseReviewModel("John Cena", "Yesterday", "Not bad", 3),
             CourseReviewModel("John Cena", "1 month ago", "Sucked", 2),
+        )
+    }
+
+    override suspend fun getLessons(courseId: Int): List<LessonModel> {
+        return listOf(
+            LessonModel("1. The Avatar", Video()),
+            LessonModel("2. La Fleur Martini", Video()),
+            LessonModel("3. The Pheonix", Video()),
+            LessonModel("4. The Lesson", Video()),
+            LessonModel("4. The Lesson", Video()),
+            LessonModel("4. The Lesson", Video()),
+            LessonModel("4. The Lesson", Video()),
+            LessonModel("4. The Lesson", Video()),
         )
     }
 

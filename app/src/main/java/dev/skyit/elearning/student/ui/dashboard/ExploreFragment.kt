@@ -36,6 +36,7 @@ class ExploreFragment : BaseFragment(R.layout.fragment_explore) {
 
 
         vModel.categoriesLive.observe(viewLifecycleOwner, Observer {
+            binding.categoriesList.removeAllViews()
             it.forEach {
                 val item = CategoryListItemViewBinding.inflate(layoutInflater)
                 item.categoryTitle.text = it.name

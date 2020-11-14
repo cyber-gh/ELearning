@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="insertCoursesParam"></a>
 # **insertCoursesParam**
-> insertCoursesParam()
+> InlineResponse2001 insertCoursesParam()
 
 
 
@@ -23,7 +23,8 @@ insert courses
 
 val apiInstance = CoursesInsertApi()
 try {
-    apiInstance.insertCoursesParam()
+    val result : InlineResponse2001 = apiInstance.insertCoursesParam()
+    println(result)
 } catch (e: ClientException) {
     println("4xx response calling CoursesInsertApi#insertCoursesParam")
     e.printStackTrace()
@@ -38,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -47,5 +48,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 

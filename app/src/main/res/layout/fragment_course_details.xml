@@ -6,8 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/course_logo"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
@@ -17,14 +26,14 @@
         app:srcCompat="@drawable/course_image_placeholder" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/cotinue_learning_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/continue_learning"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/course_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        app:layout_constraintTop_toTopOf="@+id/course_logo" />
 
     <TextView
         android:id="@+id/textView12"
@@ -35,7 +44,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/current_progress"
         android:textColor="@color/md_white_1000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/course_logo"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -47,7 +56,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="14/20 lessons"
         android:textColor="@color/md_white_1000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/course_logo"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.tabs.TabLayout
@@ -56,7 +65,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/course_logo" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"

@@ -312,7 +312,7 @@
               "type": "object",
               "properties": {
                 "data": {
-                  "$ref": "#/definitions/Teacher"
+                  "$ref": "#/definitions/Student"
                 },
                 "token": {
                   "type": "string",
@@ -586,31 +586,6 @@
       },
       "x-go-package": "e-learn/mongodb"
     },
-    "Teacher": {
-      "type": "object",
-      "properties": {
-        "_id": {
-          "type": "string",
-          "x-go-name": "Id"
-        },
-        "courses": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "x-go-name": "Courses"
-        },
-        "email": {
-          "type": "string",
-          "x-go-name": "Email"
-        },
-        "name": {
-          "type": "string",
-          "x-go-name": "Name"
-        }
-      },
-      "x-go-package": "e-learn/mongodb"
-    },
     "UserAuth": {
       "type": "object",
       "properties": {
@@ -682,62 +657,152 @@
     "getCategoriesResponse": {
       "description": "get categories",
       "schema": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Category"
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Category"
+            },
+            "x-go-name": "Data"
+          }
         }
       }
     },
     "getCoursesResponse": {
       "description": "get courses",
       "schema": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Course"
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Course"
+            },
+            "x-go-name": "Data"
+          }
         }
       }
     },
     "getStudentsResponse": {
       "description": "get students",
       "schema": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Student"
+        "type": "object",
+        "properties": {
+          "student": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Session"
+            },
+            "x-go-name": "Data"
+          }
         }
       }
     },
     "getTeachersResponse": {
       "description": "get teachers",
       "schema": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Teacher"
+        "type": "object",
+        "properties": {
+          "student": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Session"
+            },
+            "x-go-name": "Data"
+          }
         }
       }
     },
     "getWorkspaceResponse": {
       "description": "get workspaces",
       "schema": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Workspace"
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Workspace"
+            },
+            "x-go-name": "Data"
+          }
         }
       }
     },
     "insertCategoriesResponse": {
-      "description": "insert categories"
+      "description": "insert categories",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Category"
+            },
+            "x-go-name": "Data"
+          }
+        }
+      }
     },
     "insertCoursesResponse": {
-      "description": "insert courses"
+      "description": "insert courses",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Course"
+            },
+            "x-go-name": "Data"
+          }
+        }
+      }
     },
     "insertStudentsResponse": {
-      "description": "insert students"
+      "description": "insert students",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Course"
+            },
+            "x-go-name": "Data"
+          }
+        }
+      }
     },
     "insertTeachersResponse": {
-      "description": "insert teacher"
+      "description": "insert teacher",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Course"
+            },
+            "x-go-name": "Data"
+          }
+        }
+      }
     },
     "insertWorkspaceResponse": {
-      "description": "insert workspaces"
+      "description": "insert workspaces",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Workspace"
+            },
+            "x-go-name": "Data"
+          }
+        }
+      }
     },
     "joinCoursesResponse": {
       "description": "join courses"
